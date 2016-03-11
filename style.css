@@ -218,7 +218,7 @@ WYNIKI
 ********************************/
 #descriptionDiv {
 	    box-sizing: border-box;
-		margin: -5em auto 5em;
+		margin: -8em auto 5em;
 		height: auto;
 		max-width: 85%;
 		padding: 10px;
@@ -245,4 +245,13 @@ span[id^="type"] {
 span[id^="type"]:hover {
 	cursor: pointer;
 	color: #AFE8ED;
+}
+
+#wrapper {
+	z-index: 1000;
+	height: 100%;
+	width: 100%;
+	position: relative;
+	bottom: 100%;
+	background-color: white;
 }
