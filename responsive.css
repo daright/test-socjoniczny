@@ -1,0 +1,43 @@
+@media screen and (max-width: 860px){
+	#header {
+	width: 100%;
+	border-bottom: 1px solid #000;
+	min-height: 1em;
+	}
+	#nav {
+		display: none;
+	}
+	#header h1 {
+		padding: 0.5em 0;
+		font-size: 1.5rem;
+	}
+	#sectionDiv {
+		max-width: 90%;
+	}
+	#questionDiv > h2 {
+		font-size: 1.5rem;
+	}
+	label, #progress, .skippedQuestion {
+		font-size: 1rem;
+	}
+	#buttons > li {
+		display: block;
+	}
+	.button {
+		min-width: 100%;
+		margin: 0.5em auto;
+		font-size: 1rem;
+		
+	}
+	#buttons li + li {
+		margin-left: 0;
+	}
+	.logo {
+	box-sizing: box-border;
+	width: 2.7em;
+	height: 2.7em;
+	display: inline-block;
+	border: 3px solid #F38630;
+}
+	
+}

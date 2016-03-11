@@ -1,0 +1,248 @@
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Pontano+Sans|PT+Sans&subset=latin,latin-ext);
+
+/********************************
+CONTAINER
+********************************/
+
+html, body, #containter {
+		background-color: #E4FDE7;
+	height: 100%;
+	margin: 0;
+}
+#containter {
+	height: auto;
+	min-height: 100%;
+	box-sizing: border-box;
+}
+#content {
+	height: auto;
+	padding-bottom: 5em;
+/*	background-image: url(img/background.png);
+	background-repeat: no-repeat;
+	background-position: 100% 90%;*/
+}
+/********************************
+HEADING
+********************************/
+#header {
+	width: 100%;
+	min-height: 5em;
+	margin: 0;
+	background-color: #7ED0D6;
+
+	-webkit-box-shadow: 0px -32px 5px 38px rgba(0,0,0,0.66);
+	-moz-box-shadow: 0px -32px 5px 38px rgba(0,0,0,0.66);
+	box-shadow: 0px -32px 5px 38px rgba(0,0,0,0.66);
+}
+#header h1 {
+	font-size: 2.5rem;
+	line-height: 2em;
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	color: #fff;
+}
+#nav {
+	margin: -1em auto 8em;
+	padding: 0;
+	width: 446px;
+	height: 50px;
+	position: relative;
+}
+#nav h1 {
+	font-family: 'PT Sans', sans-serif;
+	opacity: 0;
+	position: relative;
+	margin-left: -3px;
+	color: #000;
+	width: 120px;
+}
+#nav h1 a{
+	text-decoration: none;
+	color: #000;
+}
+#nav h1 a:hover {
+	cursor: pointer;
+	color: #AFE8ED;
+}
+.logo {
+	box-sizing: border-box;
+	width: 50px;
+	height: 50px;
+	display: inline-block;
+	border: 2px solid #000;
+	position: relative;
+	margin-top: 0;
+	background-color: #fff;
+}
+.logo + .logo {
+	margin-left: 2px;
+}
+.logo:first-of-type {
+	position: relative;
+	right: 70em;
+	
+}
+/********************************
+SECTION
+********************************/
+#sectionDiv {
+	margin: 2em auto;
+	max-width: 68%;
+	min-height: auto;
+}
+#questionHeading {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 600;
+	font-size: 2.3em;
+	min-height: 2.6em;
+	padding-bottom: 0;
+	margin: 0;
+}
+
+#questionDiv p {
+	font-family: 'Pontano Sans', sans-serif;
+	font-size: 1.3em;
+}
+label {
+	font-family: 'Pontano Sans', sans-serif;
+	font-size: 1.3em;
+}
+
+.question {
+	border: 2px solid #000;
+	border-radius: 1em;
+	padding: 0.5em;
+	margin: 1em auto;
+	background-color: #AFE8ED;
+}
+.questionChecked{
+	background-color: #B4F4BC;
+	color: #000;
+}
+li {
+	list-style: none;
+	padding-left: 0;
+}
+ul {
+	list-style-position: inside;
+	padding-left: 0;
+}
+#buttonsDiv {
+	margin: 0 auto;
+	width: 600px;
+}
+#buttons > li {
+	display: inline-block;
+}
+#buttons li  + li{
+	margin-left: 10px;
+}
+.button {
+	font-family: 'Pontano Sans', sans-serif;
+	font-size: 1.3em;
+	width: 190px;
+}
+.button:hover:enabled {
+
+}
+.button:disabled {
+  opacity: 0.5;
+  background-color: transparent;
+}
+#questionDiv > ul {
+	min-height: 18em;
+}
+#progress {
+	font-size: 1.1em;
+	font-family: 'Pontano Sans', sans-serif;
+	border: 2px solid #000;
+	border-radius: 1em;
+	padding: 0.5em;
+	margin: 1em auto;
+	background-color: #AFE8ED;
+	text-align: center;
+}
+.skippedQuestion {
+	font-size: 1.1em;
+	font-family: 'Pontano Sans', sans-serif;
+	border: 2px solid #000;
+	border-radius: 1em;
+	padding: 0.5em;
+	padding-left: 2em;
+	margin: 0em auto 1em;
+	background-color: #AFE8ED;
+}
+#skippedDiv > p:first-of-type {
+	text-align: center;
+	border: none;
+	background-color: #B4F4BC;
+	font-size: 1.3em;
+	padding-left: 0;
+}
+#skippedDiv > p:nth-of-type(n+2):hover {
+	cursor: pointer;
+	background-color: #B4F4BC;
+}
+
+/********************************
+FOOTER
+********************************/
+#footer {
+    box-sizing: border-box;
+	clear: both;
+	background-color: #435EA7;
+	height: 3em;
+	margin-top: -3em;
+	margin-bottom: 0;
+	text-align: center;
+	border-top: 1px solid #fff;
+}
+#footer p {
+	font-family: 'Pontano Sans', sans-serif;
+	padding-top: 0;
+	margin-bottom: 0;
+	color: #fff;
+}
+#footer a {
+	color: white;
+}
+#footer a :hover{
+	color: #AFE8ED;
+}
+/********************************
+WYNIKI
+********************************/
+#descriptionDiv {
+	    box-sizing: border-box;
+		margin: -5em auto 5em;
+		height: auto;
+		max-width: 85%;
+		padding: 10px;
+		border: 2px solid black;
+		border-radius: 2em;
+		-webkit-box-shadow: inset 0px 0px 21px 3px rgba(0,0,0,0.5);
+		-moz-box-shadow: inset 0px 0px 21px 3px rgba(0,0,0,0.5);
+		box-shadow: inset 0px 0px 21px 3px rgba(0,0,0,0.5);
+}
+#descriptionDiv * {
+	font-family: 'Pontano Sans', sans-serif;
+	font-size: 1.3em;
+	margin: 1em 1em;
+}
+#descriptionDiv > h3 {
+	text-align: center;
+}
+.score {
+	opacity: 0;
+}
+span[id^="type"] {
+	text-decoration: underline;
+}
+span[id^="type"]:hover {
+	cursor: pointer;
+	color: #AFE8ED;
+}

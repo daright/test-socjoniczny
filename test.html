@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pl">
+	<head>
+		<meta charset="utf-8"/>
+		<title>Test Socjoniczny - Poznaj swój typ</title>
+		<link rel="Shortcut Icon" href="img/favicon.ico" type="image/x-icon">
+		<link type="text/css" rel="stylesheet" href="normalize.css">
+		<link type="text/css" rel="stylesheet" href="style.css">
+		<link type="text/css" rel="stylesheet" href="responsive.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div id="containter">
+			<div id="content">
+				<header>
+					<div id="header">
+						<h1>TEST SOCJONICZNY</h1>
+					</div>
+				</header>
+				<div id="nav">
+					<h1>Placeholder</h1>
+					<div id="el1" class="logo"></div>
+					<div id="el2" class="logo"></div>
+					<div id="el3" class="logo"></div>
+					<div id="el4" class="logo"></div>
+					<div id="el5" class="logo"></div>
+					<div id="el6" class="logo"></div>
+					<div id="el7" class="logo"></div>
+					<div id="el8" class="logo"></div>
+				</div>
+				<section>
+					<div id="sectionDiv"> 
+						<div id="questionDiv">
+							<h2 id="questionHeading"></h2>
+							<ul id="questionList">
+								<li>
+									<div class="question" id="firstDiv">
+										<input id="choice0" class="radio" type="radio" name="radio" value="0" checked="checked">				
+										<label for="choice0"></label>
+									</div>
+								</li>
+								<li>
+									<div class="question">
+										<input id="choice1" class="radio" type="radio" name="radio" value="1">
+										<label for="choice1"></label>
+									</div>
+								</li>
+								<li>
+									<div class="question">
+										<input id="choice2" class="radio" type="radio" name="radio" value="2">				
+										<label for="choice2"></label>
+									</div>
+								</li>
+								<li>
+									<div class="question">
+										<input id="choice3" class="radio" type="radio" name="radio" value="3">
+										<label for="choice3"></label>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div id="progressDiv">
+							<div id="buttonsDiv">
+								<ul id="buttons">
+									<li>
+										<button id="prev" class="button">Poprzednie pytanie</button>
+									</li>
+									<li>
+										<button id="next" class="button">Nastepne pytanie</button>
+									</li>
+									<li>
+										<button id="skip" class="button">Pomiń pytanie</button>
+									</li>
+								</ul>
+							</div>
+							<p id="progress"></p>
+						</div>
+						<div id="skippedDiv"></div>
+					</div>
+				</section>
+			</div>
+		</div>
+		<footer>
+			<div id="footer">
+				<p><a href="http://www.socjonika.pl" target="_blank">Socjonika.pl</a></p>
+			</div>		
+		</footer>
+		<script src="jquery-2.1.4.min.js"></script>
+		<script src="jquery-ui.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
