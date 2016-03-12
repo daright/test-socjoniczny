@@ -4,7 +4,7 @@ $(document).ready(function(){
 	var score = {ILE: 0, LII: 0, ESE: 0, SEI: 0, SLE: 0, LSI: 0, EIE: 0, IEI: 0, LIE: 0, ILI: 0, SEE: 0, ESI: 0, LSE: 0, SLI: 0, IEE: 0, EII: 0};
 	var prevScore = {ILE: 0, LII: 0, ESE: 0, SEI: 0, SLE: 0, LSI: 0, EIE: 0, IEI: 0, LIE: 0, ILI: 0, SEE: 0, ESI: 0, LSE: 0, SLI: 0, IEE: 0, EII: 0};
 	//set initial value to question index
-	var questionIndex = 34;
+	var questionIndex = 0;
 	var questionDiv = $('#questionDiv');
 	var progressText = $('#progress');
 	//set initial skipped answers to 0, and limit of skipped answers to 10
@@ -473,12 +473,9 @@ $(document).ready(function(){
 	
 	//reference to html div that contains skipped questions
 	var skippedDiv = $('#skippedDiv');
+	
+	function animateHeader(){
 
-	/**
-	 * Function displays the results after the test is done
-	 */
-	function animateScoreLogo($type1, $type2, colorDivsInterval){
-		clearInterval(colorDivsInterval);
 		var logos = [l1,l2,l3,l4,l5,l6,l7,l8];
 		for(var i = 0; i < logos.length; i++){
 			logos[i].delay(i*100).animate({'border-width': "25px"}, function(){
@@ -486,108 +483,133 @@ $(document).ready(function(){
 			});
 		}
 		
-		//animate header
 		$('#nav').animate({left: "-25%"}, 1500, "easeInOutExpo");
-		l3.animate({top: "3.5em"}, 1500, "easeInBounce", function(){
+		l3.animate({top: "3.5rem"}, 1500, "easeInBounce", function(){
 			$(this).animate({left: "-7em"}, 1500, "easeOutBounce");
 		});
-		l4.delay(0).animate({top: "3.5em"}, 1500, "easeInBounce", function(){
-			$(this).animate({left: "-7em"}, 2000, "easeOutBounce");
+		l4.animate({top: "3.5rem"}, 1500, "easeInBounce", function(){
+			$(this).animate({left: "-7rem"}, 2000, "easeOutBounce");
 		});
-		l5.delay(0).animate({top: "7em"}, 1500, "easeInBounce", function(){
+		l5.animate({top: "7rem"}, 1500, "easeInBounce", function(){
+			$(this).animate({left: "-14rem"}, 2500, "easeOutBounce");
+		});
+		l6.animate({top: "7rem"}, 1500, "easeInBounce", function(){
 			$(this).animate({left: "-14em"}, 2500, "easeOutBounce");
 		});
-		l6.delay(0).animate({top: "7em"}, 1500, "easeInBounce", function(){
-			$(this).animate({left: "-14em"}, 2500, "easeOutBounce");
+		l7.animate({top: "10.5rem"}, 1500, "easeInBounce", function(){
+			$(this).animate({left: "-21rem"}, 2500, "easeOutBounce");
 		});
-		l7.delay(0).animate({top: "10.5em"}, 1500, "easeInBounce", function(){
-			$(this).animate({left: "-21em"}, 2500, "easeOutBounce");
-		});
-		l8.delay(0).animate({top: "10.5em"}, 1500, "easeInBounce", function(){
-			$(this).animate({left: "-21em"}, 2500, "easeOutBounce", function(){
-				$('#header').animate({height: "10em"}, 1500, "easeInOutExpo");
-				$('#nav').animate({top: "11em"}, 1500, "easeInOutExpo");
-				$type1.animate({opacity: "1"}, 400);
-				$type2.animate({opacity: "1"}, 400);
-				$('#nav>h1').text("");
-				var $anchor = $("<a></a>").attr({
-					href: "http://socjonika.pl/#Budowa_psychiki",
-					target: "_blank",
-					title: "Budowa psychiki wytłumaczona na podstawie Modelu A"
-				}).text("Model A");
-				$('#nav>h1').append($anchor);
-				$('#nav>h1').animate({opacity: "1"}, 400);
-				var $descriptionDiv = $("<div></div>").attr("id", "descriptionDiv");
-				$('#sectionDiv').append($descriptionDiv);
-				var description;
-				if($type1.text().indexOf('ILE') > -1){
-						description = descriptions.ILE;
-						setModelA("ILE");
-				} else if($type1.text().indexOf('LII') > -1){
-						description = descriptions.LII;
-						setModelA("LII");						
-				} else if($type1.text().indexOf('ESE') > -1){
-						description = descriptions.ESE;
-						setModelA("ESE");
-				} else if($type1.text().indexOf('SEI') > -1){
-						description = descriptions.SEI;
-						setModelA("SEI");
-				} else if($type1.text().indexOf('SLE') > -1){
-						description = descriptions.SLE;
-						setModelA("SLE");
-				} else if($type1.text().indexOf('LSI') > -1){
-						description = descriptions.LSI;
-						setModelA("LSI");
-				} else if($type1.text().indexOf('EIE') > -1){
-						description = descriptions.EIE;
-						setModelA("EIE");
-				} else if($type1.text().indexOf('IEI') > -1){
-						description = descriptions.IEI;
-						setModelA("IEI");
-				} else if($type1.text().indexOf('LIE') > -1){
-						description = descriptions.LIE;
-						setModelA("LIE");
-				} else if($type1.text().indexOf('ILI') > -1){
-						description = descriptions.ILI;
-						setModelA("ILI");
-				} else if($type1.text().indexOf('SEE') > -1){
-						description = descriptions.SEE;
-						setModelA("SEE");
-				} else if($type1.text().indexOf('ESI') > -1){
-						description = descriptions.ESI;
-						setModelA("ESI");
-				} else if($type1.text().indexOf('LSE') > -1){
-						description = descriptions.LSE;
-						setModelA("LSE");
-				} else if($type1.text().indexOf('SLI') > -1){
-						description = descriptions.SLI;
-						setModelA("SLI");
-				} else if($type1.text().indexOf('IEE') > -1){
-						description = descriptions.IEE;
-						setModelA("IEE");
-				} else if($type1.text().indexOf('EII') > -1){
-						description = descriptions.EII;
-						setModelA("EII");
-				}  
-				$('#header').append($type1);
-				$('#header').append($type2);
-				$('.logo').animate({'border-width': "2px"});
-				$('#descriptionDiv').append(description).animate({opacity: "1"}, 400);
-				$('#type1, #type2, #type3').click(function(){
-					var type = $(this).text();
-					$('.logo').animate({'border-width': "25px"}, 200);
-					$('#descriptionDiv').fadeOut(200, function(){
-						description = descriptions[type];
-						$('#descriptionDiv').empty();
-						$('#descriptionDiv').append(description);
-						setModelA(type);
-					});
-					$('#descriptionDiv').fadeIn(200);
-					$('.logo').animate({'border-width': "2px"}, 200);
-				});
-			});
+		l8.animate({top: "10.5rem"}, 1500, "easeInBounce", function(){
+			$(this).animate({left: "-21rem"}, 2500, "easeOutBounce");
 		});
 	}
+	
+	function animateResult($type1, $type2){
+		if($(window).width() > 500){
+			$('#header').animate({height: "10rem"}, 1500, "easeInOutExpo");
+		} else {
+			$('#header').animate({height: "15rem"}, 1500, "easeInOutExpo");
+		}
+		$('#nav').animate({top: "10em"}, 1500, "easeInOutExpo");
+		$type1.animate({opacity: "1"}, 400);
+		$type2.animate({opacity: "1"}, 400);
+		$('#nav>h1').text("");
+		var $anchor = $("<a></a>").attr({
+			href: "http://socjonika.pl/#Budowa_psychiki",
+			target: "_blank",
+			title: "Budowa psychiki wytłumaczona na podstawie Modelu A"
+		}).text("Model A");
+		$('#nav>h1').append($anchor);
+		$('#nav>h1').animate({opacity: "1"}, 400);
+		var $descriptionDiv = $("<div></div>").attr("id", "descriptionDiv");
+		$('#sectionDiv').append($descriptionDiv);
+		var description;
+		if($type1.text().indexOf('ILE') > -1){
+				description = descriptions.ILE;
+				setModelA("ILE");
+		} else if($type1.text().indexOf('LII') > -1){
+				description = descriptions.LII;
+				setModelA("LII");						
+		} else if($type1.text().indexOf('ESE') > -1){
+				description = descriptions.ESE;
+				setModelA("ESE");
+		} else if($type1.text().indexOf('SEI') > -1){
+				description = descriptions.SEI;
+				setModelA("SEI");
+		} else if($type1.text().indexOf('SLE') > -1){
+				description = descriptions.SLE;
+				setModelA("SLE");
+		} else if($type1.text().indexOf('LSI') > -1){
+				description = descriptions.LSI;
+				setModelA("LSI");
+		} else if($type1.text().indexOf('EIE') > -1){
+				description = descriptions.EIE;
+				setModelA("EIE");
+		} else if($type1.text().indexOf('IEI') > -1){
+				description = descriptions.IEI;
+				setModelA("IEI");
+		} else if($type1.text().indexOf('LIE') > -1){
+				description = descriptions.LIE;
+				setModelA("LIE");
+		} else if($type1.text().indexOf('ILI') > -1){
+				description = descriptions.ILI;
+				setModelA("ILI");
+		} else if($type1.text().indexOf('SEE') > -1){
+				description = descriptions.SEE;
+				setModelA("SEE");
+		} else if($type1.text().indexOf('ESI') > -1){
+				description = descriptions.ESI;
+				setModelA("ESI");
+		} else if($type1.text().indexOf('LSE') > -1){
+				description = descriptions.LSE;
+				setModelA("LSE");
+		} else if($type1.text().indexOf('SLI') > -1){
+				description = descriptions.SLI;
+				setModelA("SLI");
+		} else if($type1.text().indexOf('IEE') > -1){
+				description = descriptions.IEE;
+				setModelA("IEE");
+		} else if($type1.text().indexOf('EII') > -1){
+				description = descriptions.EII;
+				setModelA("EII");
+		}  
+		$('#header').append($type1);
+		$('#header').append($type2);
+		$('.logo').animate({'border-width': "2px"});
+		$('#descriptionDiv').append(description).animate({opacity: "1"}, 400);
+		$('#type1, #type2, #type3').click(function(){
+			var type = $(this).text();
+			$('.logo').animate({'border-width': "25px"}, 200);
+			$('#descriptionDiv').fadeOut(200, function(){
+				description = descriptions[type];
+				$('#descriptionDiv').empty();
+				$('#descriptionDiv').append(description);
+				setModelA(type);
+			});
+			$('#descriptionDiv').fadeIn(200);
+			$('.logo').animate({'border-width': "2px"}, 200);
+		});
+	}
+
+	/**
+	 * Function displays the results after the test is done
+	 */
+	function animateScoreLogo($type1, $type2, colorDivsInterval){
+		clearInterval(colorDivsInterval);
+		
+		if ($(window).width() > 860) {
+			var start = new Date().getTime();
+			animateHeader();
+			setTimeout(function(){
+				animateResult($type1, $type2);
+			}, 5100);
+		} else {
+			animateHeader();
+			animateResult($type1, $type2);
+		}
+		
+			
+}
 	/**
 	 * Function goes to the next question
 	 */
